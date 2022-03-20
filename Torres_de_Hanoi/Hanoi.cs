@@ -8,7 +8,7 @@ namespace Torres_de_Hanoi
 {
     static class Hanoi
     {
-
+        //Variables globales para que sean más fácil de manipular
         private static int num_discos; //es privado porque solo lo consulta la solución
         private static Pila INI, FIN, AUX;
         private static int num_movimientos;

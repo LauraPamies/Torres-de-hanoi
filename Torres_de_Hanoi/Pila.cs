@@ -8,7 +8,7 @@ namespace Torres_de_Hanoi
 {
     class Pila
     {
-        public int Size {
+        public int Size { //Atributo que devuelve el tamaño de la lista de elementos de la pila (es decir devuelve el número de elementos de la pila)
             get
             {
                 return Elementos.Count;
@@ -16,7 +16,7 @@ namespace Torres_de_Hanoi
                 
         } //no podemos establecer el tamaño, sino que se establece a partir del tamaño de la lista
 
-        public Disco Top
+        public Disco Top //Devuelve el elemento supeior de la fila en un tipo disco (ya que los elementos son Discos)
         {
             get
             {
@@ -34,7 +34,7 @@ namespace Torres_de_Hanoi
 
         public List<Disco> Elementos; //Son dinámicos (pueden cambiar su tamaño en cualquier momento)
 
-        public String Nombre { get; set; }
+        public String Nombre { get; set; } // Método añadido para asignarle y saber el nombre de la PILA
 
         /* TODO: Elegir tipo de Top
         public int Top { get; set; }
@@ -49,10 +49,10 @@ namespace Torres_de_Hanoi
         /* TODO: Implementar métodos */
 
 
-        //Constructor Vacio
+        //Constructor Vacio (excepto por el nombre)
         public Pila(string n)
         {
-            Elementos = new List<Disco>();
+            Elementos = new List<Disco>(); //se crea una lista vacia
             Nombre = n;
         }
 
@@ -70,7 +70,7 @@ namespace Torres_de_Hanoi
             }
         }
 
-        public void push(Disco d)
+        public void push(Disco d) //permite añadir un disco en la pila de discos
         {
             
             Elementos.Add(d);
@@ -78,14 +78,14 @@ namespace Torres_de_Hanoi
 
         }
 
-        public Disco pop()
+        public Disco pop() //permite extraer el disco de la parte superior de la pila
         {
             Disco dsacado = Top; //coge el disco que hay arriba de la pila
             Elementos.RemoveAt(Size - 1); //Borra el de la última posición
             return dsacado;
         }                
 
-        public bool isEmpty()
+        public bool isEmpty() //informa si la pila está vacía o no.
         {
             if(Size == 0)
             {
