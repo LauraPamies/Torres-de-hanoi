@@ -56,6 +56,49 @@ namespace Torres_de_Hanoi
           }
         }
 
-       
+        public static int iterativo(int n, Pila ini, Pila fin, Pila aux) //devuelve el numero de movimientos    //Son estaticas porque no vamos a crear objetos de tipo HANOI, solo llamar a sus métodos
+        {
+            num_discos=n;
+            num_movimientos=0;
+            INI =ini;
+            FIN= fin;
+            AUX=aux;
+          
+            
+            if (n % 2 != 0) //Si n es impar
+            {
+                while (solucion()==false) //Mientras no haya solución
+                {
+                    mover_disco(ini,fin);
+                    mover_disco(ini,aux);
+                    mover_disco(aux,fin);
+                }
+
+            }
+            else //Si n es par
+            {
+                while (solucion()==false) //Mientras no haya solución
+                {
+                    mover_disco(ini,aux);
+                    mover_disco(ini,fin);
+                    mover_disco(aux,fin);
+                }
+            }
+            return num_movimientos;
+        }
+
+        private static bool solucion() //solo lo va a consultar esta clase
+        {
+            if(FIN.Size == num_discos) //si el tamaño de la pila final es igual al numero de discos inicial
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
+        }
+
     }
 }
